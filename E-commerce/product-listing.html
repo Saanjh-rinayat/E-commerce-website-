@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ShopMart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html"><h1>🛍️ ShopMart</h1></a>
+            </div>
+            <div class="nav-search">
+                <input type="text" id="search-input-listing" placeholder="Search products...">
+                <button id="search-btn-listing" class="btn-icon"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="nav-menu">
+                <a href="wishlist.html" class="nav-link">
+                    <i class="fa fa-heart-o"></i>
+                    <span class="wishlist-count">0</span>
+                    Wishlist
+                </a>
+                <a href="cart.html" class="nav-link">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                    Cart
+                </a>
+                <a href="login.html" id="login-btn" class="nav-link">
+                    <i class="fa fa-user"></i>
+                    Login
+                </a>
+                <div id="user-menu" class="user-menu" style="display: none;">
+                    <span class="user-name">User</span>
+                    <div class="user-dropdown">
+                        <a href="profile.html"><i class="fa fa-user"></i> Profile</a>
+                        <a href="orders.html"><i class="fa fa-shopping-bag"></i> Orders</a>
+                        <a href="wishlist.html"><i class="fa fa-heart"></i> Wishlist</a>
+                        <a href="#" onclick="logout()"><i class="fa fa-sign-out"></i> Logout</a>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="btn-icon"><i class="fa fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="products-page">
+            <!-- Filters Sidebar -->
+            <aside class="filters-sidebar">
+                <h3>Filters</h3>
+                
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <div class="price-inputs">
+                        <input type="number" id="price-min" placeholder="Min" min="0">
+                        <span>-</span>
+                        <input type="number" id="price-max" placeholder="Max" min="0">
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Category</h4>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Accessories">Accessories</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Rating</h4>
+                    <select id="rating-filter">
+                        <option value="">All Ratings</option>
+                        <option value="4">4+ Stars</option>
+                        <option value="4.5">4.5+ Stars</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Availability</h4>
+                    <select id="availability-filter">
+                        <option value="">All</option>
+                        <option value="in-stock">In Stock</option>
+                        <option value="out-of-stock">Out of Stock</option>
+                    </select>
+                </div>
+            </aside>
+
+            <!-- Products Section -->
+            <main class="products-main">
+                <div class="products-header">
+                    <p id="results-count" class="results-count">0 products found</p>
+                    <div class="sort-section">
+                        <label for="sort-by">Sort by:</label>
+                        <select id="sort-by">
+                            <option value="popularity">Popularity</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Rating</option>
+                            <option value="newest">Newest</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="products-grid" class="products-grid"></div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ShopMart</h3>
+                    <p>Your one-stop shop for all your needs</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product-listing.html">Products</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="profile.html">Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data/products.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/pages.js"></script>
+</body>
+</html>
